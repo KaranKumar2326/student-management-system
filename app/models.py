@@ -11,8 +11,8 @@ class StudentCreate(BaseModel):
     address: Address
 
 class StudentUpdate(BaseModel):
-    name: Optional[str]
-    age: Optional[int]
-    address: Optional[Address]
+    name: Optional[str] = Field(default=None)
+    age: Optional[int] = Field(default=None)
+    address: Optional[Address] = Field(default=None)
 
       # Update this for Pydantic V2 compatibility
