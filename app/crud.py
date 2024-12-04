@@ -1,6 +1,6 @@
 # from flask import logging
 import logging
-
+from dotenv import load_dotenv
 from motor.motor_asyncio import AsyncIOMotorClient
 from bson import ObjectId
 from typing import Optional, List
@@ -8,9 +8,12 @@ from app.models import StudentCreate, StudentUpdate
 from app.schemas import StudentOut
 import os
 
+load_dotenv()
 # Initialize MongoDB client
 MONGO_URI = os.getenv("MONGO_URI")
-print(MONGO_URI)
+# MONGO_URI = "mongodb+srv://karanyadav3775:ZaFkr9HeknjTddM5@cluster0.55mqo.mongodb.net/student_management?retryWrites=true&w=majority"
+# print(MONGO_URI)
+print(f"Mongo URI: {MONGO_URI}") 
 client = AsyncIOMotorClient(MONGO_URI)
 
 
